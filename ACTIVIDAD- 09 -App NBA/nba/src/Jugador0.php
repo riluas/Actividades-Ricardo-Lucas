@@ -34,7 +34,6 @@ class Jugador
       $this->codigo=$post["codigo"];
       $this->nombre=$post["Nombre"];
       $this->peso=$post["Peso"];
-      echo "string";
     }
     return $error;
   }
