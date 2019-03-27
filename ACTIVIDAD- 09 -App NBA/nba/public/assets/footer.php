@@ -1,3 +1,3 @@
 <footer>
-  <p>Borja Hervás</p>
+  <p>Ricardo Lucas</p>
 </footer>
