@@ -63,3 +63,16 @@ form{
   color: red;
 
 }
+
+footer{
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  color: Black;
+  text-align: center;
+  background-color: #80ffd4;
+  overflow: hidden;
+  border-radius: 10px;
+}

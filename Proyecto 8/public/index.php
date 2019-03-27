@@ -17,12 +17,11 @@ if ($conexion->connect_errno) {
   <body>
 
 
+    <!-- Menu navegacion-->
+    <?php include "./assets/navSup.php"; ?>
 
-    <div class="topnav">
-      <a class="active" href="index.php">Home</a>
-      <a href="registro.php">Registro</a>
-      <a href="listadoUsuarios.php">Usuarios</a>
-    </div>
+
+
     <br>
     <?php
     foreach ($resultado as $jugador) {
@@ -60,6 +59,7 @@ if ($conexion->connect_errno) {
 
       <script type="text/javascript" src="./js/codigo.js"></script>
 
-
+      <!-- Footer-->
+      <?php include "./assets/footer.php"; ?>
   </body>
 </html>
