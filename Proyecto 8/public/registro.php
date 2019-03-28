@@ -11,7 +11,7 @@ if ($conexion->connect_errno) {
 
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="es" dir="ltr">
   <head>
     <link rel="stylesheet" href="./css/algo.css">
     <meta charset="utf-8">

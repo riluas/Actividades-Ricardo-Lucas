@@ -8,9 +8,8 @@ if ($conexion->connect_errno) {
   $apellidos=$_POST["apellidos"];
   $edad=$_POST["edad"];
   $curso=$_POST["curso"];
-  $puntuacion=$_POST["puntuacion"];
 
-  $consulta="INSERT INTO usuario (nombre, apellidos, edad, curso, puntuacion) VALUES ('$nombre', '$apellidos', '$edad', '$curso', '$puntuacion')";
+  $consulta="INSERT INTO usuario (nombre, apellidos, edad, curso) VALUES ('$nombre', '$apellidos', '$edad', '$curso')";
   $resultado=$conexion->query($consulta);
   if ($resultado==false) {
     echo "Inerción Incorrecta";
