@@ -1,25 +1,9 @@
 <?php
-$conexion = new mysqli("localhost", "root", "", "juegosbd");
-if ($conexion->connect_errno) {
-    echo "Fallo al conectar a MySQL: (".$conexion->connect_errno.")".$conexion->connect_error;
-} elseif (!empty($_POST['nombre'])&&(!empty($_POST['apellidos']))&&(!empty($_POST['edad']))&&(!empty($_POST['curso']))) {
-
-  $nombre=$_POST["nombre"];
-  $apellidos=$_POST["apellidos"];
-  $edad=$_POST["edad"];
-  $curso=$_POST["curso"];
-
-  $consulta="INSERT INTO usuario (nombre, apellidos, edad, curso) VALUES ('$nombre', '$apellidos', '$edad', '$curso')";
-  $resultado=$conexion->query($consulta);
-  if ($resultado==false) {
-    echo "Inerción Incorrecta";
-  } else {
-    echo "Inserción Correcta";
-  }
-  $resultado=$conexion->query("SELECT * FROM usuario");
-}else {
-  $resultado=$conexion->query("SELECT * FROM usuario");
-}
+require "./../src/usuario.php";
+  $j=new Usuario();
+  $j->conectar();
+  
+  $lista=$j->listarUsuarios();
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +31,7 @@ if ($conexion->connect_errno) {
          <td class="arriba">Puntuacion</td>
        </tr>
        <?php
-       foreach ($resultado as $jugador) {
+       foreach ($lista as $jugador) {
          echo "<tr>";
          echo "<td class=abajo>".$jugador{'id'}."</td>";
          echo "<td class=abajo>".$jugador{'nombre'}."</td>";

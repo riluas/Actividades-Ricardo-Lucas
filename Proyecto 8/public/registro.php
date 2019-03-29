@@ -1,17 +1,19 @@
 <?php
-$conexion = new mysqli("localhost", "root", "", "juegosbd");
-if ($conexion->connect_errno) {
-    echo "Fallo al conectar a MySQL: (" . $conexion->connect_errno . ") " . $conexion->connect_error;
-}else {
-  $resultado = $conexion->query("SELECT * FROM usuario");
-}
+require "./../src/usuario.php";
+  $j=new Usuario();
+  $error=$j->comprobarCampos($_POST);
+  if(isset($error)){
+      if($error===false){
+        //NO HAY ERROR
+        $j->conectar();
+        $j->insertarUsuario();
+
+      }
+  }
 ?>
 
-
-
-
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
+<html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="./css/algo.css">
     <meta charset="utf-8">
