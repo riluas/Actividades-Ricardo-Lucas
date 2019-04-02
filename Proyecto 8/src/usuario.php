@@ -23,11 +23,11 @@ class Usuario
      }elseif($post["nombre"]==""){
        $error="Debes rellenar este campo";
      }elseif($post["apellidos"]==""){
-       $error="Debes rellenar este campo";
+       $error="No has introducido el apellido";
      }elseif($post["edad"]==""){
-       $error="Debes rellenar este campo";
+       $error="No has introducido la edad";
      }elseif($post["curso"]==""){
-       $error="Debes rellenar este campo";
+       $error="No has introducido el curso";
      }else{
        $error=false;
        $this->nombre=$post["nombre"];
@@ -52,9 +52,11 @@ public function conectar(){
 
 public function insertarUsuario()
 {
-  $consulta="INSERT INTO usuario (nombre, apellidos, edad, curso) VALUES ('$this->nombre', '$this->apellidos', $this->edad, $this->curso)";
+  $consulta="INSERT INTO usuario (nombre, apellidos, edad, curso)
+  VALUES ('$this->nombre', '$this->apellidos', $this->edad, $this->curso)";
    $this->conexion->query($consulta);
    echo $consulta;
+   header("Refresh:1; url=listadoUsuarios.php");
 }
 public function listarUsuarios(){
     $resultado=$this->conexion->query("SELECT id, nombre, apellidos, edad, curso, puntuacion FROM usuario");

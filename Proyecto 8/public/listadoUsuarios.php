@@ -2,7 +2,6 @@
 require "./../src/usuario.php";
   $j=new Usuario();
   $j->conectar();
-  
   $lista=$j->listarUsuarios();
 ?>
 

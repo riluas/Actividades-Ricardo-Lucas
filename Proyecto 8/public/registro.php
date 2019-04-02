@@ -33,7 +33,7 @@ require "./../src/usuario.php";
       <br><br>
       <script type="text/javascript" src="js/comprobar.js"></script>
       <div class="reg">
-        <form class="" action="listadoUsuarios.php" method="post" onsubmit="return comprobar();">
+        <form class="" action="" method="post" onsubmit="return comprobar();">
           Nombre:
             <p><input type="text" name="nombre" value="" id="nombre" ></p>
               <div id="nombreOculto" class="estilo" style='display:none;'>Debes rellenar este campo</div>
@@ -52,7 +52,7 @@ require "./../src/usuario.php";
             <div id="cursoOculto"  class="estilo" style='display:none;'>Debes rellenar este campo</div>
             <div id="numOculto2"  class="estilo" style='display:none;'>Este campo debe ser un Numero</div>
           <br>
-          <input type="submit" name="" value="Enviar" onclick="return comp()"></input>
+          <input type="submit" name="" value="Enviar" onclick="return comp(); window.location.href='listadoUsuarios.php'"></input>
         </form>
       </div>
   </body>
