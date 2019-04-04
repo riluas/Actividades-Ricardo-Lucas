@@ -3,9 +3,9 @@
 /**
  *
  */
-class Usuario extends Conexion
+class Usuario
 {
-  public $conexion=null;
+  private $conexion=null;
   private $nombre;
   private $apellidos;
   private $edad;
@@ -40,7 +40,15 @@ class Usuario extends Conexion
    }
 /*Fin comrpobar registro*/
 
+/*Inicio conexion*/
+public function conectar(){
+  $this->conexion= new mysqli("localhost", "root", "", "juegosbd");
+  if ($this->conexion->connect_errno) {
+      echo "Fallo al conectar a MySQL: (" . $this->conexion->connect_errno . ") " . $this->conexion->connect_error;
+  }
 
+}
+/*Fin conexion*/
 
 public function insertarUsuario()
 {

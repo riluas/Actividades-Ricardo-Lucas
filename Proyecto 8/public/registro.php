@@ -1,5 +1,4 @@
 <?php
-require "./../src/conexion.php";
 require "./../src/usuario.php";
   $j=new Usuario();
   $error=$j->comprobarCampos($_POST);
