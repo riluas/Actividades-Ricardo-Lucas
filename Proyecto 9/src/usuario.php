@@ -3,7 +3,7 @@
 /**
  *
  */
-class Usuario extends Conexion
+class Usuario extends Conex
 {
   public $conexion=null;
   private $nombre;

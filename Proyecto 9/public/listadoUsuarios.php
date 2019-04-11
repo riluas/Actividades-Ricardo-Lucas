@@ -1,5 +1,5 @@
 <?php
-require "./../src/conexion.php";
+require "./../src/conex.php";
 require "./../src/usuario.php";
   $j=new Usuario();
   $j->conectar();
