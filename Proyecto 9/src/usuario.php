@@ -15,6 +15,12 @@ class Usuario extends Conex
   {
   }
 
+  public function idUsuario()
+  {
+    $consulta=$this->conexion->query("SELECT * FROM usuario where id = 2 ");
+    return $consulta;
+  }
+
 /*Inicio comrpobar registro*/
   public function comprobarCampos($post){
      $error=null;
@@ -53,6 +59,12 @@ public function insertarUsuario()
 public function listarUsuarios(){
     $resultado=$this->conexion->query("SELECT id, nombre, apellidos, edad, curso, puntuacion FROM usuario");
     return $resultado;
+  }
+
+  public function incPunt()
+  {
+    $consulta=$this->conexion->query("SELECT * FROM usuariojuego WHERE ");
+
   }
 
 }

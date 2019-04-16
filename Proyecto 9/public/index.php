@@ -1,10 +1,11 @@
 <?php
-$conexion = new mysqli("localhost", "root", "", "juegosbd");
-if ($conexion->connect_errno) {
-    echo "Fallo al conectar a MySQL: (" . $conexion->connect_errno . ") " . $conexion->connect_error;
-}else {
-  $resultado = $conexion->query("SELECT * FROM usuario where id = 2 ");
-}
+require "./../src/conex.php";
+require "./../src/usuario.php";
+$j=new Usuario();
+$j->conectar();
+$resultado=$j->idUsuario();
+$j->conectar();
+$j->incPunt();
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
