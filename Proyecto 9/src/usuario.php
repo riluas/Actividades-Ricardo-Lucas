@@ -11,6 +11,7 @@ class Usuario extends Conex
   private $edad;
   private $curso;
 
+
   function __construct()
   {
   }
@@ -63,7 +64,17 @@ public function listarUsuarios(){
 
   public function incPunt()
   {
-    $consulta=$this->conexion->query("SELECT * FROM usuariojuego WHERE ");
+    $consulta=$this->conexion->query("SELECT * FROM usuariojuego WHERE id_usuario=4 && id_juego=1");
+    $num_filas=$consulta->num_rows;
+      if ($num_filas == 0) {
+        $consulta="INSERT INTO usuariojuego (id_usuario, id_juego)
+          VALUES (4,1)";
+          $this->conexion->query($consulta);
+    }
+    else {
+      $consulta="UPDATE usuariojuego SET puntuacion= puntuacion + 2 WHERE id_usuario=4" ;
+        $this->conexion->query($consulta);
+    }
 
   }
 
