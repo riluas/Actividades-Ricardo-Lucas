@@ -1,4 +1,7 @@
 <?php
+/* include de sesion start */
+include "./assets/sesion.php";
+/* fin include de sesion start */
 require "./../src/conex.php";
 require "./../src/usuario.php";
 $j=new Usuario();
@@ -6,6 +9,7 @@ $j->conectar();
 $resultado=$j->idUsuario();
 $j->conectar();
 $j->incPunt();
+$punt=$j->puntu();
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -28,8 +32,11 @@ $j->incPunt();
     foreach ($resultado as $jugador) {
       echo "<b>Usuario Conectado: </b>";
       echo "<span style=color:red;>".$jugador['nombre']."</span>";
-      echo "<br><br><b>Puntos: </b>";
-      echo "<span style=color:red;>".$jugador['puntuacion']."</span>";
+     }
+
+     foreach ($punt as $puntos) {
+       echo "<br><br><b>Puntos: </b>";
+       echo "<span style=color:red;>".$puntos['puntuacion']."</span>";
      }
 
     ?>

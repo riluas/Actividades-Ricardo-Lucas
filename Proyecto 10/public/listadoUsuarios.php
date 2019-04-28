@@ -1,4 +1,7 @@
 <?php
+/* include de sesion start */
+include "./assets/sesion.php";
+/* fin include de sesion start */
 require "./../src/conex.php";
 require "./../src/usuario.php";
   $j=new Usuario();
@@ -42,5 +45,9 @@ require "./../src/usuario.php";
          echo "</tr>";
        }
        ?>
+       </table>
+       <br>
+       <!-- Footer-->
+       <?php include "./assets/footer.php"; ?>
   </body>
 </html>

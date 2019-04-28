@@ -1,4 +1,7 @@
 <?php
+/* include de sesion start */
+include "./assets/sesion.php";
+/* fin include de sesion start */
 require "./../src/conex.php";
 require "./../src/usuario.php";
   $j=new Usuario();
@@ -56,5 +59,8 @@ require "./../src/usuario.php";
           <input type="submit" name="" value="Enviar" onclick="return comp(); window.location.href='listadoUsuarios.php'"></input>
         </form>
       </div>
+      <br>
+      <!-- Footer-->
+      <?php include "./assets/footer.php"; ?>
   </body>
 </html>

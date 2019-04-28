@@ -18,7 +18,8 @@ class Usuario extends Conex
 
   public function idUsuario()
   {
-    $consulta=$this->conexion->query("SELECT * FROM usuario where id = 2 ");
+    $userID=$_SESSION['usuario'];
+    $consulta=$this->conexion->query("SELECT id, nombre, puntuacion FROM usuario where id = $userID ");
     return $consulta;
   }
 
@@ -64,18 +65,26 @@ public function listarUsuarios(){
 
   public function incPunt()
   {
-    $consulta=$this->conexion->query("SELECT * FROM usuariojuego WHERE id_usuario=4 && id_juego=1");
+    $userID=$_SESSION['usuario'];
+    $consulta=$this->conexion->query("SELECT * FROM usuariojuego WHERE id_usuario=$userID && id_juego=1");
     $num_filas=$consulta->num_rows;
       if ($num_filas == 0) {
         $consulta="INSERT INTO usuariojuego (id_usuario, id_juego)
-          VALUES (4,1)";
+          VALUES ($userID,1)";
           $this->conexion->query($consulta);
     }
     else {
-      $consulta="UPDATE usuariojuego SET puntuacion= puntuacion + 2 WHERE id_usuario=4" ;
+      $consulta="UPDATE usuariojuego SET puntuacion= puntuacion + 2 WHERE id_usuario=$userID" ;
         $this->conexion->query($consulta);
     }
 
+  }
+
+  public function puntu()
+  {
+    $userID=$_SESSION['usuario'];
+    $consulta2=$this->conexion->query("SELECT id_usuario , puntuacion FROM usuariojuego where id_usuario = $userID && id_juego = 1 ");
+    return $consulta2;
   }
 
 }

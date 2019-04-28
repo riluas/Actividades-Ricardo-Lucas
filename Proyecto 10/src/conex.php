@@ -5,7 +5,7 @@
 class Conex
 {
   private $server="localhost";
-  private $db="juegosdb";
+  private $db="juegosbd";
   private $user="root";
   private $pass="";
   public $conexion=null;
