@@ -8,7 +8,6 @@
    private $db="proyectos";
    private $user="root";
    private $pass="";
-   public $conexion=null;
    function __construct()
    {
    }
